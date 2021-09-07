@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_layout_master/_Master.cshtml";
+}
+
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <strong class="card-title mb-3">Tabel Employee</strong>
+                @Html.ActionLink("Add Employee", "IndexCreate", "EmployeeDashboard", new { @class = "btn btn-primary", @type= "button" })
+            </div>
+            <div class="card-body">
+                <div class="table-responsive table--no-card m-b-30">
+                    <table class="table table-borderless table-striped table-earning" id="data-employee">
+                        <thead>
+                            <tr>
+                                <th class="center">ID</th>
+                                <th class="center">Name</th>
+                                <th class="center">Department</th>
+                                <th class="center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script {
+    <script>
+        $(document).ready(function () {
+            $('#data-employee').DataTable();
+        });
+    </script>
+    <script src="~/Content/custom/employee/JavaScript.js"></script>
+
+}

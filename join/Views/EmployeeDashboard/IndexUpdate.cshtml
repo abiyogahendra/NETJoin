@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "IndexUpdate";
+    Layout = "~/Views/Shared/_layout_master/_Master.cshtml";
+}
+
+
+@{
+    ViewBag.Title = "Index Create";
+    Layout = "~/Views/Shared/_layout_master/_Master.cshtml";
+}
+@model join.Models.DTO.ViewUpdate
+
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <strong class="card-title mb-3">Tabel Employee</strong>
+            </div>
+            <div class="card-body">
+                <form action="#" method="POST" class="needs-validation" novalidate>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">First Name</label>
+                        <input type="text" id="name-input" name="name" value="@Model.employees.Name" class="input-data form-control" required>
+                        <div class="invalid-feedback">
+                            Tolong Masukkan First Name
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Department</label>
+                        <select class="form-control input-data" name="department" id="exampleFormControlSelect1" required>
+                            <option disabled selected value="">Pilih Department</option>
+                            @{
+                                foreach (join.Models.Department department in Model.departments)
+                                {
+                                    <option value="@department.Id">@department.Name</option>
+                                }
+                            }
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a valid state.
+                        </div>
+                    </div>
+                </form>
+                <button type="button" onclick="CreateEmployee()" class="btn btn-primary btn-action">Create</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script {
+    <script>
+        $(document).ready(function () {
+            $('#data-employee').DataTable();
+        });
+    </script>
+    <script src="~/Content/custom/employee/Create.js"></script>
+
+}
+
+
+
