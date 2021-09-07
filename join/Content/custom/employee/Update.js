@@ -1,9 +1,12 @@
-﻿function CreateEmployee(id) {
+﻿function PostUpdate() {
     var data = {};
+    var url = window.location.href
+    var id = url.substring(url.lastIndexOf('/') + 1);
+    console.log(id)
     data.name = $('#name-input').val();
     data.DepartmentId = $('select[name="department"] option').filter(':selected').val();
     $.ajax({
-        url: "https://localhost:44387/EmployeeDashboard/PostCreate",
+        url: "https://localhost:44387/EmployeeDashboard/PostUpdate/"+id,
         type: "post",
         dataType: "json",
         contentType: "application/json",
@@ -11,7 +14,7 @@
         success: function (e) {
             Swal.fire({
                 icon: 'success',
-                title: 'Created Success',
+                title: 'Update Success',
                 timerProgressBar: true,
                 timer: 3000,
                 didOpen: () => {

@@ -1,12 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "IndexUpdate";
-    Layout = "~/Views/Shared/_layout_master/_Master.cshtml";
-}
-
-
-@{
-    ViewBag.Title = "Index Create";
+    ViewBag.Title = "Index Update";
     Layout = "~/Views/Shared/_layout_master/_Master.cshtml";
 }
 @model join.Models.DTO.ViewUpdate
@@ -30,10 +24,18 @@
                         <label for="exampleFormControlSelect1">Department</label>
                         <select class="form-control input-data" name="department" id="exampleFormControlSelect1" required>
                             <option disabled selected value="">Pilih Department</option>
+
                             @{
-                                foreach (join.Models.Department department in Model.departments)
+                                foreach (var department in Model.departments)
                                 {
-                                    <option value="@department.Id">@department.Name</option>
+                                    if (Model.employees.DepartmentId == department.Id)
+                                    {
+                                        <option value="@department.Id" selected>@department.Name</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@department.Id">@department.Name</option>
+                                    }
                                 }
                             }
                         </select>
@@ -42,7 +44,7 @@
                         </div>
                     </div>
                 </form>
-                <button type="button" onclick="CreateEmployee()" class="btn btn-primary btn-action">Create</button>
+                <button type="button" onclick="PostUpdate()" class="btn btn-primary btn-action">Update</button>
             </div>
         </div>
     </div>
@@ -54,7 +56,7 @@
             $('#data-employee').DataTable();
         });
     </script>
-    <script src="~/Content/custom/employee/Create.js"></script>
+    <script src="~/Content/custom/employee/Update.js"></script>
 
 }
 

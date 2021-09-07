@@ -152,6 +152,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\custom\employee\Create.js" />
     <Content Include="Content\custom\employee\JavaScript.js" />
+    <Content Include="Content\custom\employee\Update.js" />
     <Content Include="Content\images\bg-title-01.jpg" />
     <Content Include="Content\images\bg-title-02.jpg" />
     <Content Include="Content\images\icon\avatar-01.jpg" />

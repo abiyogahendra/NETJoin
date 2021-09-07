@@ -53,7 +53,6 @@ D:\Kantor\MII\NET\join\join\bin\System.Web.WebPages.Razor.xml
 D:\Kantor\MII\NET\join\join\bin\Newtonsoft.Json.xml
 D:\Kantor\MII\NET\join\join\bin\Antlr3.Runtime.pdb
 D:\Kantor\MII\NET\join\join\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Kantor\MII\NET\join\join\obj\Debug\join.csproj.AssemblyReference.cache
 D:\Kantor\MII\NET\join\join\obj\Debug\join.csproj.CoreCompileInputs.cache
 D:\Kantor\MII\NET\join\join\obj\Debug\join.csproj.CopyComplete
 D:\Kantor\MII\NET\join\join\obj\Debug\join.dll

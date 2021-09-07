@@ -53,8 +53,33 @@ namespace join.Controllers.Emp
             viewUpdate.departments = db.Departments.ToList();
 
             var department = db.Departments.ToList();
-            ViewBag().Department = new SelectList(department,"departmentId","departmentName");
+            SelectList departmentList = new SelectList(department, "Id", "Name");
+            ViewBag.departmentList = departmentList;
             return View(viewUpdate);
         }
+
+        [HttpPost]
+        public ActionResult PostUpdate(int id, Employee employee)
+        {
+            DB db = new DB();
+            var data = (from tmp in db.Employees where tmp.Id == id select tmp).First();
+
+            data.Name = employee.Name;
+            data.DepartmentId = employee.DepartmentId;
+            db.SaveChanges();
+            return Json(data);
+        }
+
+        [AcceptVerbs(HttpVerbs.Delete)]
+        [Route("employee/deteled")]
+        public String DeleteEmployee()
+        {
+/*            DB db = new DB();
+            Employee emp = db.Employees.Find(id);
+            db.Employees.Remove(emp);
+            db.SaveChanges();*/
+            return "coba";
+        }
+
     }
 }
